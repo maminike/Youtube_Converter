@@ -3,7 +3,7 @@ from tkinter import ttk
 from random import choice
 window = tk.Tk()
 window.title("TEST SIUPY")
-window.geometry("700x500")
+window.geometry("1000x1000")
 
 sv = tk.StringVar(value="Some text")
 sve = tk.StringVar()
@@ -76,5 +76,19 @@ for i in range(50):
     em = ime + naze + "@gmail.com"
     table.insert(parent="", values=(ime, naze, em), index=i)
 
+pg = tk.IntVar()
+progress = ttk.Progressbar(master=window, maximum=20, variable=pg, length=200)
+slider = ttk.Scale(master=window, variable=pg, from_=0, to=20)
+lbb = ttk.Label(master=window, textvariable=pg)
+progress.start()
+progress.pack()
+slider.pack()
+lbb.pack()
 
+frame = ttk.Frame(master=window, width=200, height=300, borderwidth=10, relief=tk.GROOVE)
+frame.pack(side="left")
+rame = ttk.Frame(master=window, width=200, height=300, borderwidth=10, relief=tk.GROOVE)
+rame.pack(side="left")
+butt = ttk.Button(master=frame, text="kutas")
+butt.pack()
 window.mainloop()
